@@ -1,0 +1,36 @@
+¿Que es React?
+
+React es una librería de JavaScript diseñada para construir interfaces de usuario de forma eficiente y organizada.
+Su principal idea es dividir la interfaz en componentes, que son piezas pequeñas y reutilizables de código que representan partes de la pantalla (como botones, menús, tarjetas, formularios, etc.).
+
+✅ Puntos clave:
+
+No es un framework, es una librería.
+Esto significa que React se encarga principalmente de la vista (lo que el usuario ve), y puedes combinarla con otras herramientas según lo necesites.
+
+Se basa en componentes.
+Cada componente puede tener su propio diseño, lógica y estado, lo que permite construir interfaces complejas a partir de piezas pequeñas.
+
+Actualiza la interfaz de forma eficiente usando el Virtual DOM, que solo cambia lo necesario en la pantalla, haciendo las aplicaciones más rápidas.
+
+
+Que es el virtual dom?
+
+React tiene una copia del DOM real en memoria → Virtual DOM.
+
+Cuando algo cambia (por ejemplo, el usuario escribe en un input):
+
+React modifica primero el Virtual DOM.
+
+Luego compara:
+
+Virtual DOM (nuevo) vs DOM real (actual) → esto se llama diffing.
+
+React actualiza solo las partes necesarias del DOM real.
+No vuelve a renderizar toda la página.
+
+🎯 Ventaja principal
+
+La interfaz se actualiza más rápido y con menos trabajo.
+
+Esto vuelve a React eficiente, incluso en apps grandes.
