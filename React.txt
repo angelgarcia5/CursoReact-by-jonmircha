@@ -13,6 +13,7 @@ Cada componente puede tener su propio diseño, lógica y estado, lo que permite 
 
 Actualiza la interfaz de forma eficiente usando el Virtual DOM, que solo cambia lo necesario en la pantalla, haciendo las aplicaciones más rápidas.
 
+==============================================================================
 
 Que es el virtual dom?
 
@@ -34,3 +35,197 @@ No vuelve a renderizar toda la página.
 La interfaz se actualiza más rápido y con menos trabajo.
 
 Esto vuelve a React eficiente, incluso en apps grandes.
+==============================================================================
+
+Opciones para comenzar en react:
+
+Vite , Parcel , Gastby , Nextjs
+
+==============================================================================
+
+Archivos principales en React:
+
+ 1- Index.html: Esta es la ubicacion raiz del proyecto , este archivo es la pagina principal donde REACT se monta.
+
+✅ ¿Qué cosas importantes pasan aquí?
+Parte	Función
+<div id="root"></div>	Es el contenedor donde React va a dibujar tu app.
+<script src="/src/main.jsx">	Aquí arranca React y se conecta con el root.
+
+Piensa en index.html como la página base vacía.
+
+2- main.jsx: Es el primer archivo de JavaScript que se ejecuta.
+Aquí se monta React dentro del root del HTML.
+
+✅ ¿Qué hace?
+Línea	Función
+import App from './App.jsx'	Importa tu componente principal.
+createRoot(...).render(<App />)	Dice: “dibuja <App /> dentro del root del HTML”.
+import './index.css'	Aplica estilos globales.
+
+Es el punto de entrada de la app
+
+3- App.jsx : Este es el componente principal de la aplicacion , todo lo que pongas aqui se muestra en pantalla.
+
+App incluye otros componentes → es el “esqueleto” de tu página.
+
+✅ ¿Qué es?
+Función	Explicación
+Componente principal	Es la interfaz inicial que el usuario ve.
+Puede importar otros componentes	Para estructurar tu app por partes.
+
+Piensa en App como el "corazón visual" de tu aplicación.
+
+4-index.css : Son estilos globales que afectan a toda la aplicacion.
+
+✅ ¿Para qué sirve?
+
+Configuras estilos que se aplican a toda la página
+
+Estilos base (reset, fuentes, tamaños)
+
+Se puede llamar como archivo como globals.css.
+
+Propiedad	Explicación
+Afectan toda la aplicación	No importa en qué componente estés.
+Se cargan una sola vez	Desde main.jsx.
+Ideales para configuraciones base	Ej.: tipografías, resets, fondos.
+
+Ejemplo: /* index.css (global) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+
+5-App.css: Son estilos solo para el componente app .
+
+✅ ¿Para qué sirve?
+
+Estilizar componentes específicos
+
+Evitar mezclar estilos globales con locales
+
+
+==================================================================================
+CAPITULO 2
+
+Sintaxis Jsx:
+
+Que es?
+JSX es una extensión de JavaScript que permite escribir código HTML dentro de JavaScript.
+
+No es HTML 
+
+Podemos definir estructuras de control como if y for.
+
+Asignar variables.
+
+Aceptarlo como argumentos o retorno en funciones.
+
+Expresiones Js
+
+La unica regla de jsx es que todo este empaquetado en una etiqueta , nada puede estar suelto.
+
+Hay veces que no ocupas tener una etiqueta envolviendo todo el contenido entonces en estos casos se usa un empaquetador:
+<>
+    <div>
+        Hola mundo
+    </div>
+</>
+
+Para poner una variable se usa solo {} en js se usaba ${}
+
+Ejemplo:
+
+let nombre = "Angel"
+<>
+    <div>
+        {nombre}
+    </div>
+</>
+
+==================================================================================
+
+CAPITULO 3 COMPONENTES 
+
+Que es un componente?
+
+En react se introduce el concepto de componentes para crear la interfaz de usuario de nuestra aplicacion.
+
+Son pequeñas piezas de nuestro sitio web independientes y que son reutilizables , eso es lo mejor de los componentes que se pueden reutilizar en diferentes partes del codigo , ademas el que este separado en componentes ayuda a cuando exista un error sepas a que parte del codigo te tengas que ir .
+
+Se le pueden pasar datos a un componente a traves de algo llamado props y devulven en react elementos que describen lo que debe de verse en pantalla
+
+En react los datos fluyen de manera unidireccional de componentes padres a componentes hijos.
+
+Esto quiere decir que la informacion va de un solo sentido del componente padre al componente hijo
+App (PADRE)
+   ↓
+ComponenteHijo
+
+El padre le pasa datos al hijo usando props.
+
+React permite definir los componentes come clase o como funciones
+
+Tipo de componentes:
+
+1. Componentes Funcionales (recomendados, los modernos)
+
+Son funciones que retornan JSX.
+
+Ejemplo:
+function Saludo() {
+  return <h1>Hola!</h1>;
+}
+export default Saludo;
+
+
+
+❌ 2. Componentes de Clase (antiguos)
+
+Son clases y se usaban antes de los Hooks.
+
+import { Component } from "react";
+
+class Saludo extends Component {
+  render() {
+    return <h1>Hola!</h1>;
+  }
+}
+
+export default Saludo;
+
+Para crear un componente vete a la carpeta src y ahi haz una carpeta llamada componentes y ahi empiezas a hacer tus componentes.
+
+
+Hay 2 formas de exportarlo con el export default que con este puedes importar el componente con cualquier nombre , y cuando no usas export default debes importarlo con el nombre exacto.
+
+
+==================================================================================
+
+CAPITULO 4:
+PROPIEDADES 
+
+
+
+
+
+
+
