@@ -223,6 +223,15 @@ Hay 2 formas de exportarlo con el export default que con este puedes importar el
 CAPITULO 4:
 PROPIEDADES 
 
+Son valores que recibe un componente hijo de su padre. Se agrupan en un objeto llamadas props el cual puede recibir diferentes tipos de datos como:
+
+Strings , numbers , booleans, arrays, objects , functions , react elements ,react components 
+
+Los props son inmutables esto quiere decir que son de solo lectura , no se pueden modificar.
+
+El componente las recibe como atributo que se pasan atraves de JSX
+
+
 
 
 
