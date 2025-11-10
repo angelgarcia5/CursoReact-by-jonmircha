@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import Componente from './Components/componente';
-import ProfileCard from './Components/PraccticarProps/ProfileCard';
-import Hobbies from './Components/PraccticarProps/Hobbies';
-import Usarios from './Components/PraccticarProps/Usarios';
+import ProfileCard from './Components/1-Props/ProfileCard';
+import Hobbies from './Components/1-Props/Hobbies';
+import Usarios from './Components/1-Props/Usarios';
+import Contador from './Components/2-UseState/UsState';
+import RenderizadoCondicional from './Components/3-Renderizado Condicional/RenderizadoCondicional';
+import RenderizadoElementos from './Components/4-Renderizado de Elementos/RenderizadoElementos';
+import Eventos from './Components/5-Eventos y binding/Eventos';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -39,6 +44,21 @@ function App() {
       <h3>Estamos pasando como prop un objeto</h3>
       <Usarios users={persona} />
       <hr />
+
+
+      <Contador />
+
+      <hr />
+
+      <RenderizadoCondicional esDiaoNoche={false} />
+      <hr />
+
+      <RenderizadoElementos />
+      <hr />
+
+      <Eventos />
+      <hr />
+
 
     </>
   )

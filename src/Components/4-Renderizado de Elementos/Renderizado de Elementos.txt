@@ -1,0 +1,5 @@
+¿Qué es el renderizado de elementos en React?
+
+El renderizado de elementos significa mostrar en pantalla (en el navegador) los elementos que crea React a partir del código JSX que escribes.
+
+En otras palabras, es el proceso por el cual React transforma tu código en una interfaz visible.

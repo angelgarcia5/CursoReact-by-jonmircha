@@ -1,0 +1,24 @@
+¿Qué es el renderizado condicional?
+
+En React, renderizar significa “pintar algo en pantalla”.
+Entonces, renderizado condicional significa:
+
+Mostrar (o no mostrar) algo dependiendo de una condición lógica (como un if, true/false, o una comparación).
+
+Para esto se usa el operador ternario que es un if , else corto:
+
+condición ? valorSiTrue : valorSiFalse
+
+Qué significa
+
+Si la condición es true, se ejecuta lo que está antes de los dos puntos (:).
+
+Si la condición es false, se ejecuta lo que está después de los dos puntos.
+
+function Saludo({ esDia }) {
+  return (
+    <div>
+      {esDia ? <h1>☀️ Buenos días!</h1> : <h1>🌙 Buenas noches!</h1>}
+    </div>
+  );
+}
