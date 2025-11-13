@@ -1,0 +1,44 @@
+El ciclo de vida de un componente en React describe las etapas por las que pasa un componente desde que se crea hasta que desaparece de la interfaz.
+Estas etapas existen tanto en componentes de clase como en los componentes funcionales con hooks.
+
+🧩 1. Etapas del ciclo de vida
+🔹 Montaje (Mounting)
+
+El componente se crea y se inserta en el DOM.
+
+En esta etapa ocurren:
+
+Inicialización del estado y props
+
+Renderizado inicial
+
+👉 En componentes de clase:
+
+componentDidMount() {
+  // Se ejecuta una vez, justo después de que el componente se monta
+}
+🔹 Actualización (Updating)
+
+El componente se vuelve a renderizar cuando cambian:
+
+Sus props
+
+Su estado
+
+useEffect(() => {
+  console.log("El estado 'mensaje' cambió");
+}, [mensaje]); // Solo cuando cambia 'mensaje'
+
+
+🔹 Desmontaje (Unmounting)
+
+El componente se elimina del DOM.
+
+useEffect(() => {
+  console.log("Componente montado");
+  return () => {
+    console.log("Componente desmontado");
+  };
+}, []);
+
+

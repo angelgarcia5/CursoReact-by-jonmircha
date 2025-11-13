@@ -8,6 +8,10 @@ import Contador from './Components/2-UseState/UsState';
 import RenderizadoCondicional from './Components/3-Renderizado Condicional/RenderizadoCondicional';
 import RenderizadoElementos from './Components/4-Renderizado de Elementos/RenderizadoElementos';
 import Eventos from './Components/5-Eventos y binding/Eventos';
+import ManejadorEvento from './Components/6-Eventos sinteticos , nativos y personalizables/ManejadorEvento';
+import ComunicacionEntreComponentes from './Components/7-Comunicacion entre componentes/ComunicacionEntreComponentes';
+import CicloVida from './Components/8-Ciclo de vida de componentes/CicloVida';
+import PracticarUseState from './Components/9-Hooks/PracticarUseState';
 
 
 function App() {
@@ -59,8 +63,23 @@ function App() {
       <Eventos />
       <hr />
 
+      <ManejadorEvento />
 
+      <hr />
+
+      <ComunicacionEntreComponentes />
+
+      <hr />
+
+      <CicloVida />
+
+      <hr />
+
+      <PracticarUseState />
     </>
+
+
+
   )
 }
 

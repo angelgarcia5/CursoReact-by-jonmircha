@@ -1,0 +1,95 @@
+1- Los eventos nativos son los que ya tiene por defecto react
+
+
+2-2. Eventos sintéticos (Synthetic Events de React)
+
+👉 Son una abstracción de React sobre los eventos nativos.
+React crea un SyntheticEvent que:
+
+Tiene el mismo nombre y propiedades que el evento nativo.
+
+Funciona de la misma forma en todos los navegadores.
+
+Se recicla por rendimiento (por eso no debes usarlo de forma asíncrona sin copiarlo).
+
+function App() {
+  const handleClick = (e) => {
+    console.log("Evento sintético de React:", e);
+    console.log("Tipo:", e.type); // "click"
+  };
+
+  return <button onClick={handleClick}>Haz clic</button>;
+}
+
+
+aqui el evento sintetico es e 
+
+
+3- 3. Eventos personalizados (Custom Events)
+
+👉 Son eventos definidos por ti, que puedes crear y disparar manualmente para comunicar componentes.
+
+<script>
+  const event = new CustomEvent("miEvento", {
+    detail: { mensaje: "Hola mundo" }
+  });
+
+  document.addEventListener("miEvento", (e) => {
+    console.log("Evento personalizado:", e.detail);
+  });
+
+  document.dispatchEvent(event);
+</script>
+
+
+handleClick:
+
+En React:
+
+onClick 👉 es el nombre del evento (la propiedad del botón).
+
+handleClick 👉 es la función que se ejecuta cuando ocurre ese evento.
+
+Osea la función manejadora (lo que quieres que pase cuando se haga clic).
+
+
+function App() {
+  function handleClick() {
+    alert("¡Hiciste clic en el botón!");
+  }
+
+  return (
+    <button onClick={handleClick}>Haz clic</button>
+  );
+}
+
+
+Como parametros atraves de eventos:
+function App() {
+  function handleClick(nombre, e) {
+    console.log("Hola,", nombre);
+    console.log("Evento:", e.type);
+  }
+
+  return (
+    <button onClick={(e) => handleClick("Ángel", e)}>
+      Saludar con evento
+    </button>
+  );
+}
+
+
+"Ángel" → parámetro personalizado.
+
+e → objeto del evento sintético que React te da.
+
+¿Qué es e?
+
+e es el objeto del evento que React pasa automáticamente a tu función manejadora cuando ocurre un evento (como onClick, onChange, onSubmit, etc.).
+
+Ese e representa un SyntheticEvent, que es la versión de React del evento nativo del DOM.
+
+¿Para qué sirve pasarlo?
+
+Sirve para obtener información sobre lo que ocurrió y controlar el comportamiento del navegador o del elemento.
+

@@ -1,0 +1,159 @@
+Los Hooks son funciones especiales que te permiten usar características de React (como el estado, el ciclo de vida, etc.) dentro de componentes funcionales.
+
+
+
+Tipos principales de Hooks
+1. useState → Maneja el estado (datos que cambian)
+
+Permite guardar valores y actualizar la interfaz cuando cambian.
+
+import React, { useState } from "react";
+
+function Contador() {
+  const [contador, setContador] = useState(0); // valor inicial 0
+
+  return (
+    <div>
+      <h2>Contador: {contador}</h2>
+      <button onClick={() => setContador(contador + 1)}>Sumar</button>
+      <button onClick={() => setContador(0)}>Reiniciar</button>
+    </div>
+  );
+}
+
+
+📘 Explicación:
+
+contador → el valor actual.
+
+setContador() → actualiza el valor y vuelve a renderizar el componente.
+
+
+
+2. useEffect → Maneja efectos secundarios
+
+Sirve para ejecutar código después de renderizar, como:
+
+Peticiones a una API
+
+Suscripciones
+
+Temporizadores
+
+import React, { useState, useEffect } from "react";
+
+function EjemploUseEffect() {
+  const [contador, setContador] = useState(0);
+
+  useEffect(() => {
+    console.log("🔁 El contador cambió:", contador);
+  }, [contador]); // Solo se ejecuta cuando cambia 'contador'
+
+  return (
+    <div>
+      <h2>{contador}</h2>
+      <button onClick={() => setContador(contador + 1)}>Incrementar</button>
+    </div>
+  );
+}
+
+3. useRef → Accede directamente a elementos del DOM o guarda valores sin renderizar
+import React, { useRef } from "react";
+
+function EjemploUseRef() {
+  const inputRef = useRef();
+
+  const enfocar = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} placeholder="Escribe algo..." />
+      <button onClick={enfocar}>Enfocar input</button>
+    </div>
+  );
+}
+
+4. useContext → Comparte datos entre componentes sin pasar props manualmente
+
+Permite acceder a un contexto global, como un tema o usuario actual.
+
+import React, { useContext, createContext } from "react";
+
+const TemaContexto = createContext("claro");
+
+function Hijo() {
+  const tema = useContext(TemaContexto);
+  return <p>El tema actual es: {tema}</p>;
+}
+
+function Padre() {
+  return (
+    <TemaContexto.Provider value="oscuro">
+      <Hijo />
+    </TemaContexto.Provider>
+  );
+}
+
+5. useMemo y useCallback → Optimización de rendimiento
+
+Evitan cálculos o funciones innecesarias cada vez que se renderiza el componente.
+
+import React, { useMemo, useState } from "react";
+
+function EjemploUseMemo() {
+  const [contador, setContador] = useState(0);
+
+  const cuadrado = useMemo(() => {
+    console.log("Calculando...");
+    return contador * contador;
+  }, [contador]);
+
+  return (
+    <div>
+      <h2>Contador: {contador}</h2>
+      <h3>Cuadrado: {cuadrado}</h3>
+      <button onClick={() => setContador(contador + 1)}>Sumar</button>
+    </div>
+  );
+}
+
+6. useReducer → Alternativa avanzada a useState
+
+Se usa para manejar estados más complejos (como Redux pero más simple).
+
+import React, { useReducer } from "react";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "sumar":
+      return { contador: state.contador + 1 };
+    case "reset":
+      return { contador: 0 };
+    default:
+      return state;
+  }
+}
+
+function EjemploUseReducer() {
+  const [state, dispatch] = useReducer(reducer, { contador: 0 });
+
+  return (
+    <div>
+      <h2>Contador: {state.contador}</h2>
+      <button onClick={() => dispatch({ type: "sumar" })}>Sumar</button>
+      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+    </div>
+  );
+}
+
+🧠 Resumen
+Hook	Qué hace	Ejemplo de uso
+useState	Maneja estado	Contador, texto, toggles
+useEffect	Efectos secundarios	Llamadas a APIs, timers
+useRef	Referencias a elementos o valores persistentes	Input, video, scroll
+useContext	Compartir datos globales	Tema, usuario, idioma
+useMemo	Memoriza resultados de cálculos	Evitar recomputar valores
+useCallback	Memoriza funciones	Evitar recrearlas en renders
+useReducer	Estados complejos	Formularios, lógica avanzada
