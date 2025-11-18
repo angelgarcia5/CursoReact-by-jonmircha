@@ -1,0 +1,95 @@
+🚀 ¿Qué es useEffect en React?
+
+useEffect es un hook que te permite ejecutar código cuando:
+
+el componente se monta (cuando aparece en pantalla),
+
+cuando cambia un estado o prop, o
+
+cuando el componente se desmonta (cleanup).
+
+Piensa en useEffect como:
+👉 “Corre este código cuando pase X”
+
+Su forma básica:
+
+useEffect(() => {
+    // código a ejecutar
+}, []);
+
+📌 Tipos de useEffect
+1️⃣ Ejecutar solo una vez (cuando el componente carga)
+
+(Similar a componentDidMount)
+
+useEffect(() => {
+    console.log("El componente se montó.");
+}, []); // arreglo vacío -> solo una vez
+
+
+2️⃣ Ejecutar cuando cambie un estado o prop
+
+(Similar a componentDidUpdate)
+
+const [contador, setContador] = useState(0);
+
+useEffect(() => {
+    console.log("El contador cambió a:", contador);
+}, [contador]); // se ejecuta cada vez que contador cambie
+
+
+3️⃣ Ejecutar con limpieza (cleanup)
+
+Útil para event listeners, intervalos, suscripciones, etc.
+
+useEffect(() => {
+    const intervalo = setInterval(() => {
+        console.log("tick");
+    }, 1000);
+
+    return () => {
+        clearInterval(intervalo);
+        console.log("intervalo limpiado");
+    };
+}, []);
+
+| Objetivo                 | Código                            |
+| ------------------------ | --------------------------------- |
+| Ejecutar solo al montar  | `useEffect(()=>{}, [])`           |
+| Ejecutar al cambiar algo | `useEffect(()=>{}, [variable])`   |
+| Ejecutar siempre         | `useEffect(()=>{})`               |
+| Cleanup                  | `return ()=>{}` dentro del efecto |
+
+
+
+SE usa [] cuando :
+Necesitas ejecutar algo solo al iniciar el componente.
+
+Añadir event listeners.
+
+Fetch de datos inicial.
+
+Conectar sockets.
+
+Iniciar timers.
+
+✅ 2. useEffect(() => { ... }, [state]) — Se ejecuta cuando cambie una dependencia
+📌 Úsalo cuando:
+
+Quieres que se ejecute algo cuando un estado o prop cambie.
+
+Recalcular cosas.
+
+Ejecutar efectos derivados de valores.
+
+Sincronizar un valor externo con un estado.
+
+
+✅ 3. useEffect(() => { ... }) — Se ejecuta en cada render
+📌 Úsalo cuando:
+
+Necesitas correr código cada vez que el componente se renderiza.
+
+Es POCO común usarlo así.
+
+Se usa más para debug.

@@ -12,6 +12,8 @@ import ManejadorEvento from './Components/6-Eventos sinteticos , nativos y perso
 import ComunicacionEntreComponentes from './Components/7-Comunicacion entre componentes/ComunicacionEntreComponentes';
 import CicloVida from './Components/8-Ciclo de vida de componentes/CicloVida';
 import PracticarUseState from './Components/9-Hooks/PracticarUseState';
+import ScrollHooks from './Components/10-Hook useEffect/scrollHooks';
+import RelojHooks from './Components/10-Hook useEffect/relojHooks';
 
 
 function App() {
@@ -76,6 +78,13 @@ function App() {
       <hr />
 
       <PracticarUseState />
+      <hr />
+
+      <ScrollHooks />
+      <hr />
+
+      <RelojHooks />
+
     </>
 
 
