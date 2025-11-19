@@ -1,0 +1,13 @@
+.color {
+  background-color: blueviolet;
+  color: white;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.cambio-color {
+  background-color: brown;
+  color: white;
+  padding: 1rem;
+  display: inline-block;
+}

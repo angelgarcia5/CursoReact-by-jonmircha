@@ -14,6 +14,15 @@ import CicloVida from './Components/8-Ciclo de vida de componentes/CicloVida';
 import PracticarUseState from './Components/9-Hooks/PracticarUseState';
 import ScrollHooks from './Components/10-Hook useEffect/scrollHooks';
 import RelojHooks from './Components/10-Hook useEffect/relojHooks';
+import EjercicioInput from './Components/10-Hook useEffect/EjercicioInput';
+import EjercicioMensaje from './Components/10-Hook useEffect/EjercicioMensaje';
+import ContadorAutomatico from './Components/10-Hook useEffect/ContadorAutomatico';
+import CambioColor from './Components/10-Hook useEffect/CambioColor';
+import MensajeOculto from './Components/10-Hook useEffect/MensajeOculto';
+import Multiplo from './Components/10-Hook useEffect/Multiplo';
+import InputLetras from './Components/10-Hook useEffect/InputLetras';
+
+
 
 
 function App() {
@@ -84,7 +93,31 @@ function App() {
       <hr />
 
       <RelojHooks />
+      <hr />
 
+      <EjercicioInput />
+
+      <hr />
+
+      <EjercicioMensaje />
+
+      <hr />
+
+      <ContadorAutomatico />
+
+      <hr />
+
+      <CambioColor />
+
+      <hr />
+
+      <MensajeOculto />
+      <hr />
+
+      <Multiplo />
+      <hr />
+
+      <InputLetras />
     </>
 
 

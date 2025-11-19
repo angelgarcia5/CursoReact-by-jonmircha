@@ -1,0 +1,22 @@
+.red {
+  background-color: red;
+  color: white;
+  margin-right: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.green {
+  background-color: green;
+  color: white;
+  margin-right: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
