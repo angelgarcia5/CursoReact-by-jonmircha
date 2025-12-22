@@ -1,0 +1,28 @@
+.container-frases {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson;
+  max-width: 400px;
+  gap: 0.2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-left: 100px;
+  color: white;
+}
+
+.title {
+  font-weight: 800;
+}
+
+.btn {
+  padding: 0.4rem 2rem;
+  border-radius: 10px;
+  border: 1px solid crimson;
+  cursor: pointer;
+}
+
+.respuesta {
+  text-align: center;
+}

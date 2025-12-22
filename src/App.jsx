@@ -21,8 +21,20 @@ import CambioColor from './Components/10-Hook useEffect/CambioColor';
 import MensajeOculto from './Components/10-Hook useEffect/MensajeOculto';
 import Multiplo from './Components/10-Hook useEffect/Multiplo';
 import InputLetras from './Components/10-Hook useEffect/InputLetras';
-
-
+import UseEffectPeticion from './Components/11-useEffect peticiones/useEffectPeticion';
+import UseEffectPeticionesEjemplo from './Components/11-useEffect peticiones/UseEffectPeticionesEjemplo';
+import Exchange from './Components/12-Ejemplo exchange/exchange';
+import Frases from './Components/13-Api frases/frases';
+import Clima from './Components/14-Api Clima/Clima';
+import Usario from './Components/15-Usuarios Api/Usuario';
+import Recondicional from './Components/16-Renderizado Condicional/recondicional';
+import ClimaPorCiudad from './Components/17-Api-Clima-con-Ciudad/ClimaPorCiudad';
+import UserSearch from './Components/18-Usuarios-Random/UserSearch';
+import Ref from './Components/19-Referencias/ref';
+import PracticandoReferencias from './Components/19-Referencias/PracticandoReferencias';
+import InputRef from './Components/20-Practicar-Referencias2/InputRef';
+import Formulario from './Components/21-Formularios/Formulario';
+import Estilos from './Components/22-EstilosCss/Estilos';
 
 
 function App() {
@@ -118,6 +130,52 @@ function App() {
       <hr />
 
       <InputLetras />
+
+      <hr />
+
+      <UseEffectPeticion />
+      <hr />
+      <UseEffectPeticionesEjemplo />
+      <hr />
+      <Exchange />
+      <hr />
+      <Frases />
+      <hr />
+
+      <Clima />
+
+      <hr />
+
+      <Usario />
+      <hr />
+
+      <Recondicional />
+
+      <hr />
+
+      <ClimaPorCiudad />
+
+      <hr />
+      <UserSearch />
+
+
+      <hr />
+
+      <Ref />
+
+      <hr />
+      <PracticandoReferencias />
+
+      <hr />
+
+      <InputRef />
+
+      <hr />
+      <Formulario />
+      <hr />
+      <Estilos />
+
+
     </>
 
 

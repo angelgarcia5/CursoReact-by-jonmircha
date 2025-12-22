@@ -1,0 +1,92 @@
+✅ 1. Petición básica con useEffect
+
+Cuando quieres hacer una petición a una API solo una vez, cuando el componente se monta:
+
+import React, { useEffect, useState } from 'react';
+
+function Users() {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => setUsuarios(data));
+  }, []); // ← Se ejecuta solo una vez
+
+  return (
+    <div>
+      <h1>Usuarios:</h1>
+      <ul>
+        {usuarios.map(u => (
+          <li key={u.id}>{u.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Users;
+
+
+import React, { useEffect, useState } from 'react';
+
+function UsuariosAsync() {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    const obtenerDatos = async () => {
+      const resp = await fetch("https://jsonplaceholder.typicode.com/users");
+      const data = await resp.json();
+      setUsuarios(data);
+    };
+
+    obtenerDatos();
+  }, []);
+
+  return (
+    <div>
+      <h1>Usuarios con async/await</h1>
+      {usuarios.map(u => <p key={u.id}>{u.name}</p>)}
+    </div>
+  );
+}
+
+export default UsuariosAsync;
+
+import React, { useEffect, useState } from 'react';
+
+function PeticionCompleta() {
+  const [data, setData] = useState(null);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const pedir = async () => {
+      try {
+        const resp = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        if (!resp.ok) throw new Error("Error en la petición");
+
+        const json = await resp.json();
+        setData(json);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setCargando(false);
+      }
+    };
+
+    pedir();
+  }, []);
+
+  if (cargando) return <p>Cargando...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+  return (
+    <div>
+      <h2>{data.title}</h2>
+      <p>{data.body}</p>
+    </div>
+  );
+}
+
+

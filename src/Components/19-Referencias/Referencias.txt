@@ -1,0 +1,11 @@
+En React, las referencias (refs) se usan para acceder directamente a un elemento del DOM o a un valor que no necesita provocar un re-render cuando cambia.
+
+Se usan cuando no basta con props o state, por ejemplo:
+
+Hacer focus a un input
+
+Obtener el valor de un input sin usar useState
+
+Controlar scroll, video, audio
+
+Guardar valores persistentes entre renders (timers, contadores internos)

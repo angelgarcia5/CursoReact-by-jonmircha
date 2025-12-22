@@ -1,0 +1,53 @@
+1️⃣ Padre ➡️ Hijo (con props)
+
+El padre pasa información al hijo usando props (propiedades).
+
+// Componente hijo
+function Saludo(props) {
+  return <h2>Hola, {props.nombre}</h2>;
+}
+
+// Componente padre
+function App() {
+  return <Saludo nombre="Ángel" />;
+}
+
+
+🧠 Aquí:
+
+App (padre) le pasa el valor "Ángel" al hijo Saludo
+
+El hijo recibe ese valor como props.nombre
+
+💬 Se usa cuando el padre quiere enviar datos al hijo.
+
+
+2️⃣ Hijo ➡️ Padre (con callbacks o funciones)
+
+El hijo no puede modificar directamente al padre.
+Pero puede llamar una función que el padre le pasa como prop.
+
+// Componente hijo
+function Boton({ onSaludar }) {
+  return <button onClick={() => onSaludar("Hola desde el hijo")}>Saludar</button>;
+}
+
+// Componente padre
+function App() {
+  function manejarSaludo(mensaje) {
+    alert(mensaje);
+  }
+
+  return <Boton onSaludar={manejarSaludo} />;
+}
+
+
+🧠 Aquí:
+
+El padre pasa la función manejarSaludo al hijo.
+
+El hijo la ejecuta cuando se hace clic, enviando un mensaje.
+
+El padre recibe el dato y lo usa (por ejemplo, mostrando una alerta).
+
+💬 Se usa cuando el hijo necesita avisar o enviar algo al padre.
